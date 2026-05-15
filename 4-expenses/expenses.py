@@ -1,10 +1,21 @@
-expenses = [25, 56.6, 78.9, 12.5, 34.0, 99.78, 45.6]
+summ: str = str(input("Введите сумму:")).lower().strip()
 
-total_expenses = sum(expenses)
-average_expense = total_expenses / len(expenses)
-min_expense = min(expenses)
-max_expense = max(expenses)
+temps_summ = summ.split()
+is_correect_format: bool = True
 
-result = (min_expense, max_expense, total_expenses)
+if len(temps_summ) != 2 and len(temps_summ) != 4:
+    is_correect_format = False
+    print("Вы ввели сумму в неверном формате")
+else:
+    if len(temps_summ) == 2 and temps_summ[1] != "руб":
+        is_correect_format = False
+        print("Вы ввели сумму в неверном формате")
+    elif len(temps_summ) == 4 and (temps_summ[1] != "руб" or temps_summ[3] != "коп"):
+        is_correect_format = False
+        print("Вы ввели сумму в неверном формате")
 
-print("Total Expenses:", result)
+if is_correect_format:
+    if len(temps_summ) == 2:
+        print(f"{temps_summ[0]}.00 ₽")
+    else:
+        print(f"{temps_summ[0]}.{temps_summ[2]} ₽")
