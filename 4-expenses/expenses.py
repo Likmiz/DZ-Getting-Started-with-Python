@@ -14,7 +14,6 @@ else:
         is_correect_format = False
         print("Некорректный формат суммы")
 
-
 if is_correect_format:
 
     if len(temps_summ) == 2:
