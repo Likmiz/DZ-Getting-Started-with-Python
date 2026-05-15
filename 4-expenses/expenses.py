@@ -15,6 +15,7 @@ else:
         print("Некорректный формат суммы")
 
 if is_correect_format:
+
     if len(temps_summ) == 2:
         print(f"{temps_summ[0]}.00 ₽")
     else:
